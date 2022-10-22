@@ -11,7 +11,7 @@ export class incluirChamadoCaso{
         var ano = data.getFullYear();
         const data_emissao = dia + '/' + mes + '/' + ano;
         const id_chamado = 1;  
-        const chamado = await client.query("INSERT INTO chamado(id_chamado, titulo, descricao, situacao, id_condomino) VALUES ($1, $2, $3, $4, $5) RETURNING *",[id_chamado, titulo, descricao, "Aberto", id_condomino]);
+        const chamado = await client.query("INSERT INTO chamado(id_chamado, titulo, descricao, situacao, id_condomino) VALUES ($1, $2, $3, $4, $5) RETURNING *",[id_chamado, titulo, descricao, "A", id_condomino]);
         return chamado.rows;
     }
 }
